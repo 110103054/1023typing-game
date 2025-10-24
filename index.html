@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Challenge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-wrapper">
+    <h1>Typing Challenge</h1>
+    <div id="info-bar">
+      <span id="level">Level: EASY</span>
+      <span id="score">Score: 0</span>
+    </div>
+    <div id="global-timer">Time: 60</div>
+    <div id="word-display"></div>
+    <input id="text-input" type="text" autocomplete="off" placeholder="Type the word here..." disabled />
+    <div id="word-timer">
+      <div id="word-timer-bar"></div>
+    </div>
+    <button id="start-btn">Start</button>
+  </main>
+
+  <div id="overlay" class="hidden">
+    <div class="overlay-content">
+      <h2 id="game-over-title">Game Over</h2>
+      <p id="final-score"></p>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="words.js" defer></script>
+  <script src="script.js" defer></script>
+</body>
+</html>
+
