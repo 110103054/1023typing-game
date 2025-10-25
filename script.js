@@ -27,6 +27,7 @@
   const overlay = document.getElementById("overlay");
   const restartBtn = document.getElementById("restart-btn");
   const finalScoreP = document.getElementById("final-score");
+  const themeBtn = document.getElementById("theme-toggle");
 
   // Utility functions
   function updateHUD() {
@@ -126,6 +127,18 @@
       setNextWord();
     }
   }
+
+  function applyTheme(theme){
+    document.body.classList.toggle("dark", theme === "dark");
+    themeBtn.textContent = theme === "dark" ? "☀️" : "🌙";
+  }
+  const saved = localStorage.getItem("theme") || "light";
+  applyTheme(saved);
+  themeBtn.addEventListener("click", () => {
+    const next = document.body.classList.contains("dark") ? "light" : "dark";
+    localStorage.setItem("theme", next);
+    applyTheme(next);
+  });
 
   // Event listeners
   startBtn.addEventListener("click", startGame);
